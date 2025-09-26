@@ -1,0 +1,27 @@
+name: "Steven Jokinsky"
+author: "Steven Jokinsky"
+
+navbar:
+  title: "Steven Jokinsky"
+  left: 
+  - text: "Research"
+    href: research.html
+  - text: "Teaching"
+    href: teaching.html
+  - text: "Contact"
+    href: contact.html
+  - text: "CV"
+    href: ./CV/Jokinsky-CV-SEP25.pdf
+    
+
+output_dir: docs
+
+output:
+  html_document:
+     theme:
+       bg: "#d4d8dd" # White background
+       fg: "#000000" # Dark gray foreground (text)
+       primary: "#00a86b"  # Primary accent color (e.g., for links, buttons)
+       font_scale: 1.1     # Adjust font size
+       base_font: [serif, Georgia] # Specify base font stack
+       heading_font: [serif, Georgia] # Specify heading font stack

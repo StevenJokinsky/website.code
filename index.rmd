@@ -1,0 +1,73 @@
+---
+title: ""
+output: html_document
+---
+
+<!-- Load in R packages -->
+```{r setup, include=FALSE}
+library(knitr) # "Knits" together website from multiple RMarkdown files
+library(fontawesome) # Access to mail, Twitter/X, and GitHub icons
+```
+
+<br /> <!-- LINE BREAK -->
+
+<!-- Insert professional headshot -->
+```{r, echo = FALSE, out.height = '35%', out.width = '35%', fig.align = 'center'}
+include_graphics("./images/StevenJokinsky-Circle.png")
+```
+<center>
+<font size = "5"> Steven Jokinsky </font> <br />
+Postdoctoral Scholar <br /> 
+Center for Social & Behavioral Research <br /> 
+The University of Northern Iowa
+</center>
+
+<!-- <br /> <!-- LINE BREAK -->
+
+<!-- Insert links to email, Twitter/X, and GitHub -->
+<center>
+  <a href="mailto:steven.jokinsky@uni.edu">
+    `r fa("envelope", height = "2em", prefer_type = "solid")`
+  </a>
+  &nbsp;
+  <a href="https://x.com/stevenjokinsky">
+    `r fa("x-twitter", height = "2em")`
+  </a>
+  &nbsp;
+  <a href="https://github.com/stevenjokinsky">
+    `r fa("github", height = "2em")`
+  </a>
+</center>
+
+<br /> <!-- LINE BREAK -->
+
+<!-- Biography -->
+# Biography
+I am currently a Postdoctoral Scholar in the [Center for Social & Behavior Research](https://csbr.uni.edu) at the University of Northern Iowa. In this position, I work with state and local government officials and other stakeholders to conduct applied policy research and evaluation. I work with my colleagues within CSBR to design, manage, and implement surveys using several modes (e.g., online, self-administered mail, mail-to-online, CATI, and text-to-web) to collect and analyze behavioral and public opinion data that informs public policy. <br/> <!-- LINE BREAK -->
+
+In my research, I examine the political behavior of elites and the general public and how they operate within institutional constraints. I also have research interests centered on survey methodology. My work has been published in *Electoral Studies*, *Election Law Journal*, *Social Science Quarterly*, and *Survey Practice*. <br /> <!-- LINE BREAK -->
+
+I received my Ph.D. in political science from the University of Missouri and completed a B.S. in political science and mathematics from Murray State University.
+
+::: {.columns}
+<div style="width:48%; float:left; margin-right:4%;">
+### Interests
+
+- Political behavior
+- Public opinion
+- Survey methodology
+- Spatial econometrics
+
+</div>
+
+<div style="width:48%; float:right;">
+### Education
+
+- PhD in Political Science, 2023, <br /> <!-- LINE BREAK -->
+  University of Missouri
+- B.S. in Political Science and Mathematics, 2018, <br /> <!-- LINE BREAK -->
+  Murray State University
+</div>
+:::
+
+

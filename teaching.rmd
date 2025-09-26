@@ -1,0 +1,114 @@
+---
+title: ""
+output: 
+  html_document:
+    toc: true
+    toc_float: 
+      collapsed: true
+      smooth_scroll: true
+    toc_depth: 6
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(ggplot2)
+library(readxl)
+```
+
+## Teaching Philosophy
+My teaching philosophy incorporates principles that promote effective conceptual learning as well as teaching transferable skills. The three principles my teaching philosophy centers around are (1) high expectations in the classroom; (2) a focus on teaching transferable skills; and (3) the importance of student-teacher relationships.
+
+Included below are my average teacher course evaluation (TCE) scores by semester on four core competencies: assessment, course quality, learning environment, and teaching quality. The y-axis ranges from *Strongly disagree* (1) to *Strongly agree* (5).
+
+```{r, echo = FALSE}
+#### Load Data #################################################################
+TCEs <- read_excel("/Users/stevenjokinsky/Desktop/Job Market/Materials/Statements/Teaching/Effectiveness/TCEs/TCE scores.xlsx")
+################################################################################
+
+#### Pivot Dataframe ###########################################################
+TCEs.long <- TCEs %>%
+  pivot_longer(cols = `Course Quality`:Assessment,
+               names_to = "variable",
+               values_to = "values"
+               )
+################################################################################
+
+#### Line Graph ################################################################
+# Create a line graph showing my overall "grade" in my TCEs
+FIG1 <- TCEs.long %>%
+  filter(Type %in% c("Class", "Semester") & Average %in% c("Yes")) %>%
+  mutate(Semester = case_when(Semester == "Fall 2021" ~ "FS2021",
+                              Semester == "Spring 2022" ~ "SP2022",
+                              Semester == "Summer 2022" ~ "SS2022",
+                              Semester == "Fall 2022" ~ "FS2022",
+                              Semester == "Spring 2023" ~ "SP2023",
+                              Semester == "Fall 2023" ~ "FS2023",
+                              Semester == "Spring 2024" ~ "SP2024"),
+         Semester = as.factor(Semester),
+         Semester = fct_relevel(Semester, 
+                            "FS2021", "SP2022", "SS2022", "FS2022", 
+                            "SP2023", "FS2023", "SP2024"),
+         values = as.numeric(values)) %>%
+  ggplot(aes(x = Semester, y = values, group = variable, color = variable, shape = variable)) +
+  geom_line() +
+  geom_point() +
+  labs(x = "", y = "") +
+  theme_classic() +
+  theme(text = element_text(size = 14, family = "serif"),
+        axis.text.x = element_text(color = "black"),
+        axis.text.y = element_text(color = "black"),
+        legend.title = element_blank()) +
+  ylim(4,5)
+
+FIG1
+```
+
+For more information, you can download my most recent course evaluations for each of the courses I have taught below, or click [here](./TCE/EoTE.pdf) for a comprehensive pdf of all my past course evaluations.
+
+## Courses
+#### Comparative Politics
+###### Intro to Comparative Politics 
+  <ul>
+    <li style="list-style-type: none;"> <u>Course Description</u>: A general introduction to the domestic politics of countries in the various regions of the world, with an emphasis on the concepts used to understand why political issues and processes diﬀer across developed and developing nations. Students also learn how domestic politics are shaped by super-national institutions and by national integration into a global economy. </li>
+    <li style="list-style-type: none;"> [Syllabus](./Syllabi/Intro-CP-Syllabus-SP24.pdf) | [TCE](./TCE/TCE-Intro-CP-SP24.pdf) </li>
+  </ul>
+
+###### Comparative Political Behavior 
+  <ul>
+    <li style="list-style-type: none;"> <u>Course Description</u>: The course introduces students to the subfield of comparative political behavior. The seminar discussions will explore research questions relating to cross-national diﬀerences and similarities in public opinion formation, political culture and values, voting behavior, and other forms of political participation. We will also address violent forms of political participation, including strikes, protests, and revolutions. While the focus of the class will be on comparing and contrasting the US, Britain, France and Germany, we will also address political behavior in both developed and developing democracies. </li>
+    <li style="list-style-type: none;"> [Syllabus](./Syllabi/CPB-Syllabus-SP24.pdf) | [TCE](./TCE/TCE-CPB-SP22.pdf) </li>
+  </ul>
+
+###### UK Politics
+  <ul>
+    <li style="list-style-type: none;"> <u>Course Description</u>: This course will introduce you to British politics. This course will cover a range of topics central to the structure and substance of politics in the United Kingdom: the social and political context, the basic institutions of government, public opinion and participation, interest groups, and public policy. To facilitate learning about these topics as they relate to the UK, we will examine what the UK shares and what diﬀerentiates it from other countries such as the U.S. and other European states. This course has three fundamental goals: (1) to introduce students to the major questions in British politics, (2) to acquaint them with the field’s best answers to those questions, and (3) to give them the tools to think critically about the answers. </li>
+    <li style="list-style-type: none;"> [Syllabus](./Syllabi/UK-Politics-Syllabus-FS23.pdf) | [TCE](./TCE/TCE-UK-Politics-FS23.pdf) </li>
+  </ul>
+
+#### American Politics
+###### Intro to American Politics
+  <ul>
+    <li style="list-style-type: none;"> <u>Course Description</u>: This course is an introduction to American government and to various aspects of political science. We will discuss a broad survey of themes, questions, and topics related to issues central to the structure and substance of politics in the United States. We will cover: the founding and the Constitution, federalism, civil rights, the basic institutions of government, public opinion and participation, interest groups, and public policy. </li>
+    <li style="list-style-type: none;"> [Syllabus](./Syllabi/Intro-AP-Syllabus-FS21.pdf) | [TCE](./TCE/TCE-Intro-AP-FS21.pdf) </li>
+  </ul>
+
+###### Campaigns and Elections
+  <ul>
+    <li style="list-style-type: none;"> <u>Course Description</u>: An analysis of individual voting behavior and candidate strategies during presidential and congressional elections. The eﬀect of the mass media, political action committees, and political advertising on the vote decision is examined. Attention is also devoted to candidates campaign organizations and communication strategies. </li>
+    <li style="list-style-type: none;"> [Syllabus](./Syllabi/CE-Syllabus-SP24.pdf) | [TCE](./TCE/TCE-CE-SP24.pdf) </li>
+  </ul>
+
+#### Methods
+###### The Science of Politics
+  <ul>
+    <li style="list-style-type: none;"> <u>Course Description</u>: This course provides an introduction to the Science of Politics. We will consider a variety of research methods, including historical case study research, field research, quantitative analysis, survey research, experimental techniques, and more. The central objective of this course is to provide students with a clear understanding of how to evaluate causal relationships in the political world using real world applications. </li>
+    <li style="list-style-type: none;"> [Syllabus](./Syllabi/SoP-Syllabus-SP23.pdf) | [TCE](./TCE/TCE-SoP-SP23.pdf) </li>
+  </ul>
+
+###### Social Science Statistics
+  <ul>
+    <li style="list-style-type: none;"> <u>Course Description</u>: This course provides an introduction to a variety of statistical methods used in quantitative data analysis particularly in the social sciences. These statistical methods are used in quantitative data analysis, levels of measurement, frequency distribution, graphic representations, measures of average and dispersion, cross-tabulations and measures of association, probability and hypothesis testing, bivariate analyses, statistical inference using single and multiple samples and analysis of variance. General topics include research methodologies and statistical tests, including measures of central tendency and variability, Z-scores, Hypothesis testing, T-tests, ANOVA, Chi-square, correlation, Bivariate regression and Confidence intervals. </li>
+    <!-- <li style="list-style-type: none;"> Syllabus | TCE </li> -->
+  </ul>

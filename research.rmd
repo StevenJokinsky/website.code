@@ -1,0 +1,52 @@
+---
+title: ""
+output: 
+  html_document:
+    toc: true
+    toc_float: 
+      collapsed: true
+      smooth_scroll: true
+    toc_depth: 6
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Research
+
+
+#### Publications
+
+<p style="text-indent: -1em; padding-left: 1em;">
+  Endres, Kyle, **Steven Jokinsky**, and Mechelle Timmons. 2025. “[The Utility of USPS Inbound Business Reply Envelope Tracking for Survey Data Collection](https://doi.org/10.29115/SP-2025-0012).” *Survey Practice*.
+</p>
+
+<p style="text-indent: -1em; padding-left: 1em;"> 
+  **Jokinsky, Steven**, Christine Lipsmeyer, Andrew Philips, Guy Whitten, and Laron K. Williams. 2024. “[Look Over There. Where? A Compositional Approach to the Modeling of Public Opinion on the Most Important Problem](https://onlinelibrary.wiley.com/doi/10.1111/ssqu.13360).” *Social Science Quarterly*.
+</p>
+
+<p style="text-indent: -1em; padding-left: 1em;"> 
+  Endersby, James and **Steven Jokinsky**. 2024. “[State Electoral Innovation and Voter Turnout in Midterm and Presidential Elections](https://www.liebertpub.com/doi/abs/10.1089/elj.2023.0013).” *Election Law Journal: Rules, Politics, and Policy.*
+</p>
+
+<p style="text-indent: -1em; padding-left: 1em;"> 
+  Stegmaier, Mary, **Steven Jokinsky**, and Michael S. Lewis-Beck. 2023. “[Election Forecasting: The evolution and accuracy of political economy models in the UK](https://www.sciencedirect.com/science/article/abs/pii/S0261379423001166).” *Electoral Studies*.
+</p>
+
+#### Under Review
+
+<p style="text-indent: -1em; padding-left: 1em;"> 
+  “Count It Up: The Effect of Displaying Word Counts on Response Quality
+for Web Surveys” (with Kyle Endres and Hillary Wehe) at *Journal of Survey
+Statistics and Methodology*.
+</p>
+
+<!-- <p style="text-indent: -1em; padding-left: 1em;">  -->
+<!--   “A Place of Their Own: Far-Right Support and Reunification in the Former East Germany” (with Michael A. Powell) at *Western European Politics*. -->
+<!-- </p> -->
+
+<!-- #### Professional Reports -->
+
+
+

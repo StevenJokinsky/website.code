@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>teaching.knit</title>
+
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link href="site_libs/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-5.2.2/bootstrap.bundle.min.js"></script>
+<script src="site_libs/bs3compat-0.5.1/transition.js"></script>
+<script src="site_libs/bs3compat-0.5.1/tabs.js"></script>
+<script src="site_libs/bs3compat-0.5.1/bs3compat.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Steven Jokinsky</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="research.html">Research</a>
+</li>
+<li>
+  <a href="teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="contact.html">Contact</a>
+</li>
+<li>
+  <a href="./CV/Jokinsky-CV-SEP25.pdf">CV</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<div id="teaching-philosophy" class="section level2">
+<h2>Teaching Philosophy</h2>
+<p>My teaching philosophy incorporates principles that promote effective
+conceptual learning as well as teaching transferable skills. The three
+principles my teaching philosophy centers around are (1) high
+expectations in the classroom; (2) a focus on teaching transferable
+skills; and (3) the importance of student-teacher relationships.</p>
+<p>Included below are my average teacher course evaluation (TCE) scores
+by semester on four core competencies: assessment, course quality,
+learning environment, and teaching quality. The y-axis ranges from
+<em>Strongly disagree</em> (1) to <em>Strongly agree</em> (5).</p>
+<p><img src="teaching_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>For more information, you can download my most recent course
+evaluations for each of the courses I have taught below, or click <a
+href="./TCE/EoTE.pdf">here</a> for a comprehensive pdf of all my past
+course evaluations.</p>
+</div>
+<div id="courses" class="section level2">
+<h2>Courses</h2>
+<div id="comparative-politics" class="section level4">
+<h4>Comparative Politics</h4>
+<div id="intro-to-comparative-politics" class="section level6">
+<h6>Intro to Comparative Politics</h6>
+<ul>
+<li style="list-style-type: none;">
+<u>Course Description</u>: A general introduction to the domestic
+politics of countries in the various regions of the world, with an
+emphasis on the concepts used to understand why political issues and
+processes diﬀer across developed and developing nations. Students also
+learn how domestic politics are shaped by super-national institutions
+and by national integration into a global economy.
+</li>
+<li style="list-style-type: none;">
+<a href="./Syllabi/Intro-CP-Syllabus-SP24.pdf">Syllabus</a> | <a
+href="./TCE/TCE-Intro-CP-SP24.pdf">TCE</a>
+</li>
+</ul>
+</div>
+<div id="comparative-political-behavior" class="section level6">
+<h6>Comparative Political Behavior</h6>
+<ul>
+<li style="list-style-type: none;">
+<u>Course Description</u>: The course introduces students to the
+subfield of comparative political behavior. The seminar discussions will
+explore research questions relating to cross-national diﬀerences and
+similarities in public opinion formation, political culture and values,
+voting behavior, and other forms of political participation. We will
+also address violent forms of political participation, including
+strikes, protests, and revolutions. While the focus of the class will be
+on comparing and contrasting the US, Britain, France and Germany, we
+will also address political behavior in both developed and developing
+democracies.
+</li>
+<li style="list-style-type: none;">
+<a href="./Syllabi/CPB-Syllabus-SP24.pdf">Syllabus</a> | <a
+href="./TCE/TCE-CPB-SP22.pdf">TCE</a>
+</li>
+</ul>
+</div>
+<div id="uk-politics" class="section level6">
+<h6>UK Politics</h6>
+<ul>
+<li style="list-style-type: none;">
+<u>Course Description</u>: This course will introduce you to British
+politics. This course will cover a range of topics central to the
+structure and substance of politics in the United Kingdom: the social
+and political context, the basic institutions of government, public
+opinion and participation, interest groups, and public policy. To
+facilitate learning about these topics as they relate to the UK, we will
+examine what the UK shares and what diﬀerentiates it from other
+countries such as the U.S. and other European states. This course has
+three fundamental goals: (1) to introduce students to the major
+questions in British politics, (2) to acquaint them with the field’s
+best answers to those questions, and (3) to give them the tools to think
+critically about the answers.
+</li>
+<li style="list-style-type: none;">
+<a href="./Syllabi/UK-Politics-Syllabus-FS23.pdf">Syllabus</a> | <a
+href="./TCE/TCE-UK-Politics-FS23.pdf">TCE</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="american-politics" class="section level4">
+<h4>American Politics</h4>
+<div id="intro-to-american-politics" class="section level6">
+<h6>Intro to American Politics</h6>
+<ul>
+<li style="list-style-type: none;">
+<u>Course Description</u>: This course is an introduction to American
+government and to various aspects of political science. We will discuss
+a broad survey of themes, questions, and topics related to issues
+central to the structure and substance of politics in the United States.
+We will cover: the founding and the Constitution, federalism, civil
+rights, the basic institutions of government, public opinion and
+participation, interest groups, and public policy.
+</li>
+<li style="list-style-type: none;">
+<a href="./Syllabi/Intro-AP-Syllabus-FS21.pdf">Syllabus</a> | <a
+href="./TCE/TCE-Intro-AP-FS21.pdf">TCE</a>
+</li>
+</ul>
+</div>
+<div id="campaigns-and-elections" class="section level6">
+<h6>Campaigns and Elections</h6>
+<ul>
+<li style="list-style-type: none;">
+<u>Course Description</u>: An analysis of individual voting behavior and
+candidate strategies during presidential and congressional elections.
+The eﬀect of the mass media, political action committees, and political
+advertising on the vote decision is examined. Attention is also devoted
+to candidates campaign organizations and communication strategies.
+</li>
+<li style="list-style-type: none;">
+<a href="./Syllabi/CE-Syllabus-SP24.pdf">Syllabus</a> | <a
+href="./TCE/TCE-CE-SP24.pdf">TCE</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="methods" class="section level4">
+<h4>Methods</h4>
+<div id="the-science-of-politics" class="section level6">
+<h6>The Science of Politics</h6>
+<ul>
+<li style="list-style-type: none;">
+<u>Course Description</u>: This course provides an introduction to the
+Science of Politics. We will consider a variety of research methods,
+including historical case study research, field research, quantitative
+analysis, survey research, experimental techniques, and more. The
+central objective of this course is to provide students with a clear
+understanding of how to evaluate causal relationships in the political
+world using real world applications.
+</li>
+<li style="list-style-type: none;">
+<a href="./Syllabi/SoP-Syllabus-SP23.pdf">Syllabus</a> | <a
+href="./TCE/TCE-SoP-SP23.pdf">TCE</a>
+</li>
+</ul>
+</div>
+<div id="social-science-statistics" class="section level6">
+<h6>Social Science Statistics</h6>
+<ul>
+<li style="list-style-type: none;">
+<u>Course Description</u>: This course provides an introduction to a
+variety of statistical methods used in quantitative data analysis
+particularly in the social sciences. These statistical methods are used
+in quantitative data analysis, levels of measurement, frequency
+distribution, graphic representations, measures of average and
+dispersion, cross-tabulations and measures of association, probability
+and hypothesis testing, bivariate analyses, statistical inference using
+single and multiple samples and analysis of variance. General topics
+include research methodologies and statistical tests, including measures
+of central tendency and variability, Z-scores, Hypothesis testing,
+T-tests, ANOVA, Chi-square, correlation, Bivariate regression and
+Confidence intervals.
+</li>
+<!-- <li style="list-style-type: none;"> Syllabus | TCE </li> -->
+</ul>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4,h5,h6",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+---
+title: 
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(leaflet) # Needed to generate interactive map
+library(fontawesome)
+```
+
+<center>
+# Contact Me
+</center>
+
+<center>
+Office hours: N/A; Please email at this time
+</center>
+
+<!-- Insert links to email, Twitter/X, and GitHub -->
+<center>
+  <a href="mailto:steven.jokinsky@uni.edu">
+    `r fa("envelope", height = "2em", prefer_type = "solid")`
+  </a>
+  &nbsp;
+  <a href="https://x.com/stevenjokinsky">
+    `r fa("x-twitter", height = "2em")`
+  </a>
+  &nbsp;
+  <a href="">
+    `r fa("calendar", height = "2em", prefer_type = "solid")`
+  </a>
+</center>
+
+</br> <!-- LINE BREAK -->
+
+<!-- Interactive map -->
+
+```{r out.width='100%', echo=FALSE, include=FALSE}
+leaflet() %>% addTiles() %>%
+  setView(-92.45838232031225, 42.516408231358454, zoom = 17) %>%
+  addMarkers(
+    -92.45838232031225, 42.516408231358454
+  )
+```
