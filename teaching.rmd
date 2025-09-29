@@ -78,7 +78,7 @@ For more information, you can download my most recent course evaluations for eac
 ###### Comparative Political Behavior 
   <ul>
     <li style="list-style-type: none;"> <u>Course Description</u>: The course introduces students to the subfield of comparative political behavior. The seminar discussions will explore research questions relating to cross-national diﬀerences and similarities in public opinion formation, political culture and values, voting behavior, and other forms of political participation. We will also address violent forms of political participation, including strikes, protests, and revolutions. While the focus of the class will be on comparing and contrasting the US, Britain, France and Germany, we will also address political behavior in both developed and developing democracies. </li>
-    <li style="list-style-type: none;"> [Syllabus](./Syllabi/CPB-Syllabus-SP24.pdf) | [TCE](./TCE/TCE-CPB-SP22.pdf) </li>
+    <li style="list-style-type: none;"> [Syllabus](./Syllabi/CPB-Syllabus-FS22.pdf) | [TCE](./TCE/TCE-CPB-FS22.pdf) </li>
   </ul>
 
 ###### UK Politics
