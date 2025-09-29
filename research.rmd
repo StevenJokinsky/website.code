@@ -42,9 +42,9 @@ for Web Surveys” (with Kyle Endres and Hillary Wehe) at *Journal of Survey
 Statistics and Methodology*.
 </p>
 
-<!-- <p style="text-indent: -1em; padding-left: 1em;">  -->
-<!--   “A Place of Their Own: Far-Right Support and Reunification in the Former East Germany” (with Michael A. Powell) at *Western European Politics*. -->
-<!-- </p> -->
+<p style="text-indent: -1em; padding-left: 1em;">
+   “Lost Places: Far-Right Support and Reunification in the Former East Germany” (with Michael A. Powell) at *Western European Politics*. 
+</p>
 
 <!-- #### Professional Reports -->
 
