@@ -17,12 +17,12 @@ library(ggplot2)
 library(readxl)
 ```
 
-## Teaching Philosophy
-My teaching philosophy incorporates principles that promote effective conceptual learning as well as teaching transferable skills. The three principles my teaching philosophy centers around are (1) high expectations in the classroom; (2) a focus on teaching transferable skills; and (3) the importance of student-teacher relationships.
+<!-- ## Teaching Philosophy -->
+<!-- My teaching philosophy incorporates principles that promote effective conceptual learning as well as teaching transferable skills. The three principles my teaching philosophy centers around are (1) high expectations in the classroom; (2) a focus on teaching transferable skills; and (3) the importance of student-teacher relationships. -->
 
-Included below are my average teacher course evaluation (TCE) scores by semester on four core competencies: assessment, course quality, learning environment, and teaching quality. The y-axis ranges from *Strongly disagree* (1) to *Strongly agree* (5).
+<!-- Included below are my average teacher course evaluation (TCE) scores by semester on four core competencies: assessment, course quality, learning environment, and teaching quality. The y-axis ranges from *Strongly disagree* (1) to *Strongly agree* (5). -->
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, include = FALSE}
 #### Load Data #################################################################
 TCEs <- read_excel("/Users/stevenjokinsky/Desktop/Job Market/Materials/Statements/Teaching/Effectiveness/TCEs/TCE scores.xlsx")
 ################################################################################
@@ -65,7 +65,7 @@ FIG1 <- TCEs.long %>%
 FIG1
 ```
 
-For more information, you can download my most recent course evaluations for each of the courses I have taught below, or click [here](./TCE/EoTE.pdf) for a comprehensive pdf of all my past course evaluations.
+<!-- For more information, you can download my most recent course evaluations for each of the courses I have taught below, or click [here](./TCE/EoTE.pdf) for a comprehensive pdf of all my past course evaluations. -->
 
 ## Courses
 #### Comparative Politics
