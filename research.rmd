@@ -35,7 +35,7 @@ knitr::opts_chunk$set(echo = TRUE)
 </p>
 
 #### Under Review
-
+<!-- ###### <u>Political Science</u> -->
 <p style="text-indent: -1em; padding-left: 1em;"> 
   “Count It Up: The Effect of Displaying Word Counts on Response Quality
 for Web Surveys” (with Kyle Endres and Hillary Wehe) at *Journal of Survey
@@ -43,7 +43,15 @@ Statistics and Methodology*.
 </p>
 
 <p style="text-indent: -1em; padding-left: 1em;">
-   “Lost Places: Far-Right Support and Reunification in the Former East Germany” (with Michael A. Powell) at *Western European Politics*. 
+   “Lost Places: Far-Right Support and Reunification in the Former East Germany” (with Michael A. Powell) at *German Politics*. 
+</p>
+
+<!-- ###### <u>Interdisciplinary</u> -->
+<p style="text-indent: -1em; padding-left: 1em;">
+   “Slaughterhouse or research lab? Midwestern students’ (mis)perceptions of
+biomanufacturing careers” (with Hillary Wehe, Hee Kyoung Jung, Kyle En-
+dres, Nicholas A. Bowman, and Mary E. Losch) at *Journal of Research in
+Technical Careers*. 
 </p>
 
 <!-- #### Professional Reports -->
