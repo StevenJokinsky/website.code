@@ -11,7 +11,7 @@ navbar:
   - text: "Contact"
     href: contact.html
   - text: "CV"
-    href: ./CV/Jokinsky-CV-SEP25.pdf
+    href: ./CV/Jokinsky-CV-OCT25.pdf
     
 
 output_dir: docs
